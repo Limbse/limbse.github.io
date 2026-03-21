@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "Bash(grep -r PageProps /c/Users/ganga/github/limbse/node_modules/next/dist/docs/ --include=*.md --include=*.mdx -l)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(ffmpeg -version)",
+      "Bash(cmd.exe /c \"ffmpeg -version\")",
+      "Bash(cmd.exe /c \"where ffmpeg\" 2>&1)",
+      "Read(//c/Users/ganga/AppData/Local/Microsoft/WinGet/Packages//**)",
+      "Read(//c/ProgramData/Microsoft/WinGet/**)",
+      "Read(//c/Users/ganga/**)",
+      "Bash(FFMPEG=\"/c/Users/ganga/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe\")",
+      "Bash(__NEW_LINE_df87de7cdd7ceab3__ \"$FFMPEG\" -i \"public/assets/videos/Clinica-Fitting.mp4\" -vcodec libx264 -crf 26 -preset slow -movflags +faststart -an \"public/assets/videos/clinica-fitting.mp4\")",
+      "Bash(FFMPEG=\"/c/Users/ganga/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe\" cd \"/c/Users/ganga/github/limbse\" __NEW_LINE_e4e3f64d0000fdcf__ \"$FFMPEG\" -i \"public/assets/videos/Clinica-Fitting.mp4\" -vcodec libx264 -crf 26 -preset slow -movflags +faststart -an \"public/assets/videos/clinica-fitting-web.mp4\")",
+      "Bash(FFMPEG=\"/c/Users/ganga/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe\" cd \"/c/Users/ganga/github/limbse\" __NEW_LINE_5b3e7798bbf34d99__ \"$FFMPEG\" -i \"public/assets/videos/Clinica-Fitting-Vertical.mp4\" -vcodec libx264 -crf 28 -preset slow -movflags +faststart -an \"public/assets/videos/clinica-fitting-vertical-web.mp4\")"
     ]
   }
 }

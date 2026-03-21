@@ -17,8 +17,8 @@ export function Hero({ dict }: Props) {
   useEffect(() => {
     const src =
       window.innerWidth < 768
-        ? "/assets/videos/clinica-fitting-vertical.mov"
-        : "/assets/videos/clinica-fitting.mov";
+        ? "/assets/videos/clinica-fitting-vertical.mp4"
+        : "/assets/videos/clinica-fitting.mp4";
     setVideoSrc(src);
   }, []);
 
@@ -30,14 +30,16 @@ export function Hero({ dict }: Props) {
       {/* Vídeo: src definido via JS após hidratação para garantir suporte em iOS Safari */}
       <video
         key={videoSrc}
-        src={videoSrc ?? undefined}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
         aria-hidden="true"
-      />
+      >
+        {videoSrc && <source src={videoSrc} type="video/mp4" />}
+      </video>
 
       {/* Grid texture */}
       <div
