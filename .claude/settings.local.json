@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r PageProps /c/Users/ganga/github/limbse/node_modules/next/dist/docs/ --include=*.md --include=*.mdx -l)",
+      "Bash(npx next:*)"
+    ]
+  }
+}
