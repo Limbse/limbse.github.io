@@ -5,17 +5,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Dictionary } from "@/lib/dictionaries";
+import { getWhatsAppUrl, hasWhatsAppNumber, siteConfig } from "@/lib/site-config";
 
 interface Props {
   dict: Dictionary;
 }
 
-const WHATSAPP_NUMBER = "5512999999999"; // TODO: substituir pelo número real
-
 export function Header({ dict }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { nav } = dict;
+  const useWhatsApp = dict.lang === "pt" && hasWhatsAppNumber();
+  const primaryContactHref =
+    useWhatsApp ? getWhatsAppUrl(nav.whatsappMessage) : `mailto:${siteConfig.email}`;
+  const primaryContactLabel = useWhatsApp ? nav.cta : siteConfig.email;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -48,60 +51,57 @@ export function Header({ dict }: Props) {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between lg:h-20">
-            {/* Logo */}
             <Link
-              href="/"
-              className="flex-shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal rounded"
+              href={`/${dict.lang}`}
+              className="flex-shrink-0 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal"
             >
               <Image
                 src="/assets/logo_branco.svg"
                 alt="Limbse"
                 width={120}
                 height={32}
+                style={{ width: 120, height: "auto" }}
                 priority
               />
             </Link>
 
-            {/* Desktop nav */}
             <nav
-              className="hidden lg:flex items-center gap-8"
-              aria-label="Navegação principal"
+              className="hidden items-center gap-8 lg:flex"
+              aria-label={nav.ariaLabel}
             >
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-body text-white/80 hover:text-teal transition-colors duration-200"
+                  className="text-sm font-body text-white/80 transition-colors duration-200 hover:text-teal"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
 
-            {/* Desktop right */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden items-center gap-4 lg:flex">
               <Link
                 href={nav.toggleHref}
-                className="text-sm font-body text-white/60 hover:text-white transition-colors duration-200"
+                className="text-sm font-body text-white/60 transition-colors duration-200 hover:text-white"
               >
                 {nav.toggle}
               </Link>
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={nav.cta}
-                className="inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2 text-sm font-heading text-navy hover:bg-teal-light transition-colors duration-200"
+                href={primaryContactHref}
+                target={useWhatsApp ? "_blank" : undefined}
+                rel={useWhatsApp ? "noopener noreferrer" : undefined}
+                aria-label={primaryContactLabel}
+                className="inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2 text-sm font-heading text-navy transition-colors duration-200 hover:bg-teal-light"
               >
-                {nav.cta}
+                {primaryContactLabel}
               </a>
             </div>
 
-            {/* Mobile right */}
-            <div className="flex lg:hidden items-center gap-3">
+            <div className="flex items-center gap-3 lg:hidden">
               <Link
                 href={nav.toggleHref}
-                className="text-sm text-white/70 hover:text-white transition-colors px-1"
+                className="px-1 text-sm text-white/70 transition-colors hover:text-white"
               >
                 {nav.toggle}
               </Link>
@@ -114,20 +114,20 @@ export function Header({ dict }: Props) {
                 <span className="sr-only">
                   {menuOpen ? nav.closeLabel : nav.menuLabel}
                 </span>
-                <div className="relative w-5 h-[14px] flex flex-col justify-between">
+                <div className="relative flex h-[14px] w-5 flex-col justify-between">
                   <span
-                    className={`block h-0.5 w-5 bg-white rounded transition-all duration-250 origin-center ${
-                      menuOpen ? "rotate-45 translate-y-[6px]" : ""
+                    className={`block h-0.5 w-5 origin-center rounded bg-white transition-all duration-250 ${
+                      menuOpen ? "translate-y-[6px] rotate-45" : ""
                     }`}
                   />
                   <span
-                    className={`block h-0.5 w-5 bg-white rounded transition-all duration-250 ${
-                      menuOpen ? "opacity-0 scale-x-0" : ""
+                    className={`block h-0.5 w-5 rounded bg-white transition-all duration-250 ${
+                      menuOpen ? "scale-x-0 opacity-0" : ""
                     }`}
                   />
                   <span
-                    className={`block h-0.5 w-5 bg-white rounded transition-all duration-250 origin-center ${
-                      menuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+                    className={`block h-0.5 w-5 origin-center rounded bg-white transition-all duration-250 ${
+                      menuOpen ? "-translate-y-[8px] -rotate-45" : ""
                     }`}
                   />
                 </div>
@@ -137,7 +137,6 @@ export function Header({ dict }: Props) {
         </div>
       </header>
 
-      {/* Mobile menu overlay — fora do <header> para evitar conflito de stacking context */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -145,11 +144,11 @@ export function Header({ dict }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-navy flex flex-col lg:hidden"
-            style={{ paddingTop: "64px" }} // altura do header
+            className="fixed inset-0 z-40 flex flex-col bg-navy lg:hidden"
+            style={{ paddingTop: "64px" }}
           >
-            <div className="flex flex-col flex-1 overflow-y-auto px-6 pt-10 pb-12">
-              <nav className="flex flex-col gap-2" aria-label="Menu mobile">
+            <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-12 pt-10">
+              <nav className="flex flex-col gap-2" aria-label={nav.mobileAriaLabel}>
                 {navLinks.map((link, i) => (
                   <motion.a
                     key={link.href}
@@ -158,7 +157,7 @@ export function Header({ dict }: Props) {
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 + i * 0.07 }}
-                    className="text-2xl font-heading font-bold text-white hover:text-teal active:text-teal transition-colors min-h-[56px] flex items-center border-b border-white/8"
+                    className="flex min-h-[56px] items-center border-b border-white/8 text-2xl font-heading font-bold text-white transition-colors hover:text-teal active:text-teal"
                   >
                     {link.label}
                   </motion.a>
@@ -171,13 +170,13 @@ export function Header({ dict }: Props) {
                 className="mt-auto pt-8"
               >
                 <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={primaryContactHref}
+                  target={useWhatsApp ? "_blank" : undefined}
+                  rel={useWhatsApp ? "noopener noreferrer" : undefined}
                   onClick={() => setMenuOpen(false)}
-                  className="flex h-14 w-full items-center justify-center rounded-full bg-teal text-navy font-heading font-bold text-base hover:bg-teal-light transition-colors"
+                  className="flex h-14 w-full items-center justify-center rounded-full bg-teal text-base font-heading font-bold text-navy transition-colors hover:bg-teal-light"
                 >
-                  {nav.cta}
+                  {primaryContactLabel}
                 </a>
               </motion.div>
             </div>

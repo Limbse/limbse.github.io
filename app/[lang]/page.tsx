@@ -3,6 +3,9 @@ import { getDictionary, isLocale } from "@/lib/dictionaries";
 import { Hero } from "@/components/sections/Hero";
 import { Problema } from "@/components/sections/Problema";
 import { Neuroviva } from "@/components/sections/Neuroviva";
+import { Validation } from "@/components/sections/Validation";
+import { Impact } from "@/components/sections/Impact";
+import { Team } from "@/components/sections/Team";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 
 export default async function Page({
@@ -21,6 +24,9 @@ export default async function Page({
       <Hero dict={dict} />
       <Problema dict={dict} />
       <Neuroviva dict={dict} />
+      <Validation dict={dict} />
+      <Impact dict={dict} />
+      <Team dict={dict} />
       <CTAFinal dict={dict} />
     </>
   );
