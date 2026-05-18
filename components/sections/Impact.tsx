@@ -9,7 +9,7 @@ const OrthosisModel = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="h-full w-full rounded-full border border-teal/30 bg-teal/10" />
+      <div className="h-full w-full rounded-lg bg-teal/5 opacity-70" />
     ),
   },
 );
@@ -62,7 +62,7 @@ export function Impact({ dict }: Props) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mx-auto h-72 w-72 sm:h-96 sm:w-96 lg:h-[30rem] lg:w-full"
+          className="mx-auto h-72 w-full max-w-96 sm:h-96 lg:h-[30rem] lg:max-w-none"
           aria-hidden="true"
         >
           <OrthosisModel />

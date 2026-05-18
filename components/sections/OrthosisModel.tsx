@@ -1,82 +1,91 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Center, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { Suspense, useMemo, useRef, useState } from "react";
 import type { Group, Mesh } from "three";
-import { EdgesGeometry, LineBasicMaterial, LineSegments } from "three";
+import { Box3, MeshBasicMaterial, Vector3 } from "three";
 
-function WireframeOrthosis() {
+const MODEL_URL = "/assets/3d/orthosis.glb";
+const BASE_ROTATION: [number, number, number] = [-0.08, -0.62, -0.04];
+
+function WireframeOrthosis({ shouldAnimate }: { shouldAnimate: boolean }) {
   const groupRef = useRef<Group>(null);
-  const { scene } = useGLTF("/assets/3d/orthosis.glb");
+  const { scene } = useGLTF(MODEL_URL);
 
-  const wireScene = useMemo(() => {
+  const normalizedScene = useMemo(() => {
     const clone = scene.clone(true);
 
     clone.traverse((object) => {
       const mesh = object as Mesh;
       if (!mesh.isMesh || !mesh.geometry) return;
 
-      mesh.visible = false;
-      const edges = new EdgesGeometry(mesh.geometry, 18);
-      const material = new LineBasicMaterial({
+      mesh.material = new MeshBasicMaterial({
         color: "#3BB7A2",
         transparent: true,
-        opacity: 0.9,
+        opacity: 0.98,
+        wireframe: true,
       });
-      mesh.add(new LineSegments(edges, material));
     });
+
+    const box = new Box3().setFromObject(clone);
+    const center = new Vector3();
+    const size = new Vector3();
+    box.getCenter(center);
+    box.getSize(size);
+
+    const maxAxis = Math.max(size.x, size.y, size.z);
+    const scale = maxAxis > 0 ? 3.75 / maxAxis : 1;
+
+    clone.scale.setScalar(scale);
+    clone.position.set(
+      -center.x * scale,
+      -center.y * scale,
+      -center.z * scale,
+    );
 
     return clone;
   }, [scene]);
 
-  useFrame((_, delta) => {
+  useFrame((state) => {
     if (!groupRef.current) return;
 
-    groupRef.current.rotation.y += delta * 0.28;
-    groupRef.current.rotation.x = -0.18 + Math.sin(Date.now() * 0.001) * 0.03;
+    const sway = shouldAnimate ? Math.sin(state.clock.elapsedTime * 0.75) * 0.08 : 0;
+    const breathe = shouldAnimate ? Math.sin(state.clock.elapsedTime * 0.9) * 0.025 : 0;
+
+    groupRef.current.rotation.set(
+      BASE_ROTATION[0] + breathe,
+      BASE_ROTATION[1] + sway,
+      BASE_ROTATION[2],
+    );
   });
 
   return (
-    <group ref={groupRef}>
-      <Center>
-        <primitive object={wireScene} scale={2.7} />
-      </Center>
+    <group ref={groupRef} rotation={BASE_ROTATION}>
+      <primitive object={normalizedScene} />
     </group>
   );
 }
 
-function ModelFallback() {
-  return (
-    <div className="relative h-full w-full overflow-hidden rounded-full border border-teal/30 bg-teal/10">
-      <div className="absolute inset-8 rounded-full border border-teal/30" />
-      <div className="absolute left-1/2 top-6 h-[80%] w-px -translate-x-1/2 bg-teal/30" />
-      <div className="absolute left-8 right-8 top-1/2 h-px -translate-y-1/2 bg-teal/30" />
-      <div className="absolute inset-1/4 rounded-[40%] border-2 border-teal/80" />
-    </div>
-  );
+export function ModelLoading() {
+  return <div className="h-full w-full rounded-lg bg-teal/5 opacity-70" />;
 }
 
 export function OrthosisModel() {
-  const [canAnimate] = useState(() => {
+  const [shouldAnimate] = useState(() => {
     if (typeof window === "undefined") return false;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const capableDevice = navigator.hardwareConcurrency >= 4;
-    return !reduceMotion && capableDevice;
+    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
 
-  if (!canAnimate) return <ModelFallback />;
-
   return (
-    <Canvas camera={{ position: [0, 0.15, 4], fov: 36 }} dpr={[1, 1.5]}>
-      <ambientLight intensity={1.2} />
-      <directionalLight position={[2, 3, 4]} intensity={1.4} />
+    <Canvas camera={{ position: [0, 0, 7.4], fov: 32 }} dpr={[1, 1.5]}>
+      <ambientLight intensity={1.6} />
       <Suspense fallback={null}>
-        <WireframeOrthosis />
+        <WireframeOrthosis shouldAnimate={shouldAnimate} />
       </Suspense>
     </Canvas>
   );
 }
 
-useGLTF.preload("/assets/3d/orthosis.glb");
+useGLTF.preload(MODEL_URL);
