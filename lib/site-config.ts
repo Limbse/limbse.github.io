@@ -3,6 +3,7 @@ export const siteConfig = {
   tagline: "Design que Transforma. Tecnologia que Fortalece.",
   email: "contato@limbse.com",
   whatsappNumber: "+5511993232324",
+  linkedin: "https://www.linkedin.com/company/limbse",
   instagram: "https://www.instagram.com/limbse",
   plausibleDomain: "limbse.com",
   cnpj: "49.184.418/0001-95",
