@@ -51,8 +51,8 @@ export function Header({ dict }: Props) {
       >
         <div className="section-container">
           <div className="flex h-16 items-center justify-between lg:h-[4.75rem]">
-            <Link
-              href={`/${dict.lang}`}
+            <a
+              href="#inicio"
               className="flex min-h-11 flex-shrink-0 items-center rounded"
             >
               <Image
@@ -63,7 +63,7 @@ export function Header({ dict }: Props) {
                 style={{ width: 112, height: "auto" }}
                 priority
               />
-            </Link>
+            </a>
 
             <nav
               className="hidden items-center gap-8 lg:flex"

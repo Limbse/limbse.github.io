@@ -95,6 +95,7 @@ const researchIcons = [IconFlask, IconPulse, IconNetwork];
 
 const partnerScale: Record<string, string> = {
   UNIFESP:                   "scale-[1.35]",
+  PIT:                       "scale-[1.35]",
   UniVap:                    "scale-[1.4]",
   "AWS Startups":            "scale-[1.55]",
   Mão3D:                     "scale-[1.45]",

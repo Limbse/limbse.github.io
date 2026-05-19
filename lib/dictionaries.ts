@@ -115,12 +115,13 @@ const pt = {
     partnersTitle: "Parceiros institucionais",
     partners: [
       { name: "UNIFESP", logo: "/assets/images/parceiros/unifesp.png" },
+      { name: "PIT", logo: "/assets/images/parceiros/pit.png" },
+      { name: "Mão3D", logo: "/assets/images/parceiros/mao3d.png" },
       { name: "UniVap", logo: "/assets/images/parceiros/univap.png" },
       { name: "AWS Startups", logo: "/assets/images/parceiros/aws.png" },
-      { name: "Mão3D", logo: "/assets/images/parceiros/mao3d.png" },
-      { name: "SUS Digital", logo: "/assets/images/parceiros/susdigital.png" },
-      { name: "in.cube / InovaHC USP", logo: "/assets/images/parceiros/incube.png" },
       { name: "UpLab", logo: "/assets/images/parceiros/uplab.png" },
+      { name: "in.cube / InovaHC USP", logo: "/assets/images/parceiros/incube.png" },
+      { name: "SUS Digital", logo: "/assets/images/parceiros/susdigital.png" },
     ],
   },
   technology: {
@@ -327,12 +328,13 @@ const en: Dictionary = {
     partnersTitle: "Institutional partners",
     partners: [
       { name: "UNIFESP", logo: "/assets/images/parceiros/unifesp.png" },
+      { name: "PIT", logo: "/assets/images/parceiros/pit.png" },
+      { name: "Mão3D", logo: "/assets/images/parceiros/mao3d.png" },
       { name: "UniVap", logo: "/assets/images/parceiros/univap.png" },
       { name: "AWS Startups", logo: "/assets/images/parceiros/aws.png" },
-      { name: "Mão3D", logo: "/assets/images/parceiros/mao3d.png" },
-      { name: "SUS Digital", logo: "/assets/images/parceiros/susdigital.png" },
-      { name: "in.cube / InovaHC USP", logo: "/assets/images/parceiros/incube.png" },
       { name: "UpLab", logo: "/assets/images/parceiros/uplab.png" },
+      { name: "in.cube / InovaHC USP", logo: "/assets/images/parceiros/incube.png" },
+      { name: "SUS Digital", logo: "/assets/images/parceiros/susdigital.png" },
     ],
   },
   technology: {
