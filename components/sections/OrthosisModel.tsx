@@ -11,6 +11,7 @@ const BASE_ROTATION: [number, number, number] = [-0.08, -0.62, -0.04];
 
 function WireframeOrthosis({ shouldAnimate }: { shouldAnimate: boolean }) {
   const groupRef = useRef<Group>(null);
+  const rotationYRef = useRef(BASE_ROTATION[1]);
   const { scene } = useGLTF(MODEL_URL);
 
   const normalizedScene = useMemo(() => {
@@ -47,21 +48,22 @@ function WireframeOrthosis({ shouldAnimate }: { shouldAnimate: boolean }) {
     return clone;
   }, [scene]);
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     if (!groupRef.current) return;
 
-    const sway = shouldAnimate ? Math.sin(state.clock.elapsedTime * 0.75) * 0.08 : 0;
+    rotationYRef.current += delta * 0.4;
+
     const breathe = shouldAnimate ? Math.sin(state.clock.elapsedTime * 0.9) * 0.025 : 0;
 
     groupRef.current.rotation.set(
       BASE_ROTATION[0] + breathe,
-      BASE_ROTATION[1] + sway,
+      rotationYRef.current,
       BASE_ROTATION[2],
     );
   });
 
   return (
-    <group ref={groupRef} rotation={BASE_ROTATION}>
+    <group ref={groupRef}>
       <primitive object={normalizedScene} />
     </group>
   );

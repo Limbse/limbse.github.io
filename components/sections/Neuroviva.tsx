@@ -85,7 +85,7 @@ export function Neuroviva({ dict }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="card-dark card-pad group relative flex min-h-72 flex-col gap-5 transition-all duration-300 hover:border-teal/35 hover:bg-white/10"
+              className="card-dark card-pad group relative flex flex-col gap-5 transition-all duration-300 hover:border-teal/35 hover:bg-white/10"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10 text-teal ring-1 ring-teal/20">
                 {cardIcons[i]}

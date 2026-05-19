@@ -34,26 +34,24 @@ export function Technology({ dict }: Props) {
       />
 
       <div className="section-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 max-w-2xl"
-        >
-          <span className="section-eyebrow">{technology.eyebrow}</span>
-          <h2 className="section-title-light mt-4">{technology.headline}</h2>
-          <p className="body-copy-light mt-6">{technology.subheadline}</p>
-        </motion.div>
-
-        <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.6 }}
           >
-            <ol className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-5">
+            <span className="section-eyebrow">{technology.eyebrow}</span>
+            <h2 className="section-title-light mt-4">{technology.headline}</h2>
+            <p className="body-copy-light mt-6">{technology.subheadline}</p>
+
+            <motion.ol
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="mt-10 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-5"
+            >
               {technology.steps.map((step, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span
@@ -67,7 +65,7 @@ export function Technology({ dict }: Props) {
                   </span>
                 </li>
               ))}
-            </ol>
+            </motion.ol>
           </motion.div>
 
           <motion.div
@@ -75,17 +73,14 @@ export function Technology({ dict }: Props) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="flex flex-col items-center"
+            className="flex items-center justify-center"
           >
             <div
-              className="mx-auto h-72 w-full max-w-96 sm:h-96 lg:h-[30rem] lg:max-w-none"
+              className="h-72 w-full sm:h-96 lg:h-[480px]"
               aria-label={technology.modelCaption}
             >
               <OrthosisModel />
             </div>
-            <p className="mt-3 text-center text-xs text-white/40">
-              {technology.modelCaption}
-            </p>
           </motion.div>
         </div>
       </div>

@@ -34,37 +34,36 @@ export function Problema({ dict }: Props) {
           {problema.headline}
         </motion.h2>
 
-        {/* Metric cards */}
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-3 lg:gap-5">
-          {problema.metrics.map((metric, i) => (
-            <motion.div
-              key={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              custom={i + 1}
-              variants={fadeUp}
-              className="card-light card-pad flex min-h-56 flex-col gap-5"
-            >
-              {/* Value */}
+        {/* Evidence panel */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          custom={1}
+          variants={fadeUp}
+          className="card-light mt-8 overflow-hidden sm:mt-10"
+        >
+          <div className="divide-y divide-[rgb(14_30_53/0.07)] sm:grid sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {problema.metrics.map((metric, i) => (
               <div
-                className={`font-heading text-[3.35rem] font-black leading-none sm:text-[3.65rem] lg:text-[4.4rem] ${
-                  metric.highlight ? "text-red-brand" : "text-navy"
-                }`}
+                key={i}
+                className="flex items-start gap-4 border-l-2 border-teal p-5 sm:flex-col sm:gap-0 sm:border-l-0 sm:p-6 lg:p-7"
               >
-                {metric.value}
+                <div
+                  className={`shrink-0 font-heading text-[2.625rem] font-black leading-none sm:text-[2.875rem] lg:text-[3.1rem] ${
+                    metric.highlight ? "text-red-brand" : "text-navy"
+                  }`}
+                >
+                  {metric.value}
+                </div>
+                <div className="mb-3 mt-4 hidden h-0.5 w-8 rounded-full bg-teal sm:block" />
+                <p className="caption-copy-dark pt-0.5 font-medium sm:pt-0">
+                  {metric.label}
+                </p>
               </div>
-
-              {/* Divider */}
-              <div className="h-0.5 w-10 rounded-full bg-teal" />
-
-              {/* Label */}
-              <p className="caption-copy-dark font-medium">
-                {metric.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Body */}
         <motion.p

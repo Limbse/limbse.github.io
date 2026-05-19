@@ -38,7 +38,7 @@ const pt = {
       },
       {
         value: "70%",
-        label: "dos casos são atendidos pelo SUS",
+        label: "podem apresentar comprometimento do membro superior",
         highlight: false,
       },
     ],
@@ -46,18 +46,18 @@ const pt = {
   },
   neuroviva: {
     headline: "NeurovIvA",
-    subheadline: "Um ecossistema integrado para conectar prescrição, fabricação e acompanhamento.",
-    body: "A NeurovIvA organiza a jornada pós-AVC em uma linha de cuidado rastreável: o profissional prescreve, a órtese é personalizada por escâner tridimensional e fabricação por filamento fundido (FFF), e o paciente segue com telereabilitação apoiada por dados.",
+    subheadline: "Uma plataforma que conecta o profissional, a órtese e o paciente em um cuidado contínuo.",
+    body: "A NeurovIvA conecta prescrição, personalização da órtese e acompanhamento remoto em uma única jornada — do consultório ao domicílio do paciente.",
     cards: [
       {
         title: "Plataforma de Prescrição",
-        desc: "Profissionais configuram condutas, registram parâmetros clínicos e acompanham a evolução do cuidado.",
+        desc: "Profissionais de saúde prescrevem, ajustam o plano de cuidado e acompanham o paciente à distância.",
         badge: "Prescrição e rastreabilidade",
       },
       {
         title: "Órtese 3D Personalizada",
-        desc: "Escâner tridimensional, design paramétrico e fabricação por filamento fundido (FFF) com material nacional.",
-        badge: "TRL 6 - estudo clínico ativo",
+        desc: "A órtese é moldada à anatomia de cada paciente com escaneamento 3D e impressão personalizada.",
+        badge: "Validada em estudo clínico",
       },
       {
         title: "App de Telereabilitação",
@@ -68,7 +68,7 @@ const pt = {
   },
   validacao: {
     eyebrow: "Validação científica",
-    headline: "Pesquisa, desenvolvimento e institucional",
+    headline: "Pesquisa, desenvolvimento e inovação",
     subheadline:
       "A Limbse nasce da pesquisa aplicada e avança com parceiros clínicos, acadêmicos e ambientes de inovação.",
     researchCards: [
@@ -145,15 +145,17 @@ const pt = {
     quote:
       "Tornar a personalização na reabilitação acessível e inteligente.",
     note: "Imagem real pendente de autorização para uso institucional. Até lá, esta seção evita expor pacientes identificáveis.",
+    imageSeal: "Fluxo digital NeurovIvA",
+    imageTagline: "Personalização no ponto de cuidado.",
   },
   equipe: {
     eyebrow: "Equipe",
-    headline: "A equipe por trás da NeurovIvA.",
+    headline: "Quem constroi da NeurovIvA.",
     members: [
       {
         name: "Thabata Ganga",
         role: "CEO",
-        bio: "Engenheira biomédica, pesquisadora e responsável pela estratégia, produto e integração tecnológica da NeurovIvA.",
+        bio: "Engenheira biomédica, pesquisadora e responsável pela estratégia, produto e integração tecnológica da solução.",
         photo: "/assets/images/equipe/thabata.png",
       },
       {
@@ -165,7 +167,7 @@ const pt = {
       {
         name: "Beatriz Basso",
         role: "Fisioterapia",
-        bio: "Fisioterapeuta e mestranda em inovação tecnológica, responsável pelos requisitos clínicos, parâmetros terapêuticos e validação funcional da NeurovIvA.",
+        bio: "Fisioterapeuta e mestranda em inovação tecnológica, responsável pelos requisitos clínicos, parâmetros terapêuticos e validação funcional",
         photo: "/assets/images/equipe/beatriz.png",
       },
       {
@@ -247,7 +249,7 @@ const en: Dictionary = {
       },
       {
         value: "70%",
-        label: "of cases are treated by SUS, Brazil's public health system",
+        label: "may have upper limb impairment after stroke",
         highlight: false,
       },
     ],
@@ -255,18 +257,18 @@ const en: Dictionary = {
   },
   neuroviva: {
     headline: "NeurovIvA",
-    subheadline: "An integrated ecosystem connecting prescription, fabrication and follow-up.",
-    body: "NeurovIvA organizes the post-stroke journey into a traceable care pathway: professionals prescribe, the orthosis is personalized through three-dimensional scanning and fused filament fabrication (FFF), and patients continue telerehabilitation supported by data.",
+    subheadline: "A platform connecting the clinician, the orthosis and the patient in continuous care.",
+    body: "NeurovIvA connects prescription, orthosis personalization and remote follow-up in a single journey — from the clinic to the patient's home.",
     cards: [
       {
         title: "Prescription Platform",
-        desc: "Healthcare professionals configure care plans, register clinical parameters and monitor rehabilitation progress.",
+        desc: "Clinicians prescribe, adjust care plans and monitor patient progress remotely.",
         badge: "Prescription and traceability",
       },
       {
         title: "Personalized 3D Orthosis",
-        desc: "Three-dimensional scanning, parametric design and fused filament fabrication (FFF) with domestic materials.",
-        badge: "TRL 6 - active clinical study",
+        desc: "The orthosis is shaped to each patient's anatomy using 3D scanning and personalized printing.",
+        badge: "Validated in clinical study",
       },
       {
         title: "Telerehabilitation App",
@@ -277,7 +279,7 @@ const en: Dictionary = {
   },
   validacao: {
     eyebrow: "Scientific validation",
-    headline: "Research, development and institutional",
+    headline: "Research, development and inovation",
     subheadline:
       "Limbse is built on applied research and advances with clinical, academic and innovation partners.",
     researchCards: [
@@ -353,6 +355,8 @@ const en: Dictionary = {
     body: "NeurovIvA is designed to reduce waiting time, expand access and help professionals deliver more personalized care plans.",
     quote: "Making personalized rehabilitation accessible and intelligent.",
     note: "Real patient imagery is pending authorization for institutional use. Until then, this section avoids exposing identifiable patients.",
+    imageSeal: "NeurovIvA digital flow",
+    imageTagline: "Personalization at the point of care.",
   },
   equipe: {
     eyebrow: "Team",
@@ -361,7 +365,7 @@ const en: Dictionary = {
       {
         name: "Thabata Ganga",
         role: "CEO",
-        bio: "Biomedical engineer and researcher, responsible for strategy, product and technological integration of NeurovIvA.",
+        bio: "Biomedical engineer and researcher, responsible for strategy, product and technological integration of solution.",
         photo: "/assets/images/equipe/thabata.png",
       },
       {
@@ -373,7 +377,7 @@ const en: Dictionary = {
       {
         name: "Beatriz Basso",
         role: "Physical Therapy",
-        bio: "Physiotherapist and MSc candidate in technological innovation, responsible for clinical requirements, therapeutic parameters and functional validation of NeurovIvA.",
+        bio: "Physiotherapist and MSc candidate in technological innovation, responsible for clinical requirements, therapeutic parameters and functional validation.",
         photo: "/assets/images/equipe/beatriz.png",
       },
       {
