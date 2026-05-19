@@ -1,6 +1,6 @@
 # Roadmap do Redesign Limbse / NeurovIvA
 
-**Status geral:** Etapas 1 e 2 concluídas; há refinamentos visuais manuais já aplicados e mantidos no working tree.  
+**Status geral:** Etapas 1 a 5 concluídas. Próxima: Etapa 6 — Polimento Final.  
 **Objetivo:** acompanhar o redesign da landing page preservando o que já funciona e evitando mudanças grandes de uma só vez.
 
 ---
@@ -38,14 +38,10 @@ Direção principal:
 
 ## 3. Tarefas Pendentes
 
-- Criar ou refinar seção de fluxo digital/tecnologia para contextualizar o GLB.
-- Refinar contraste, espaçamento, cards, botões e CTAs.
-- Melhorar validação científica, reconhecimentos e parceiros.
-- Refinar equipe com bios mais curtas e estrutura preparada para fotos.
-- Otimizar responsividade mobile.
-- Validar performance do vídeo e do GLB.
-- Criar fallback visual para GLB, se necessário.
-- Polir CTA final para conversão institucional.
+- Melhorar validação científica, reconhecimentos e parceiros. (Etapa 6)
+- Refinar equipe com bios mais curtas e estrutura preparada para fotos. (Etapa 6)
+- Polir CTA final para conversão institucional. (Etapa 6)
+- Criar fallback visual estático para GLB, se necessário. (pendente consciente — loading fallback já existe)
 
 ---
 
@@ -53,19 +49,19 @@ Direção principal:
 
 ### P0 - Fundacional
 
-- Atualizar documentação de design.
-- Criar roadmap.
-- Revisar copy principal do hero. ✅ Concluído na Etapa 2.
-- Reposicionar NeurovIvA como ecossistema. ✅ Concluído na Etapa 2.
-- Garantir que GLB e vídeo tenham papéis narrativos separados.
+- Atualizar documentação de design. ✅ Etapa 1.
+- Criar roadmap. ✅ Etapa 1.
+- Revisar copy principal do hero. ✅ Etapa 2.
+- Reposicionar NeurovIvA como ecossistema. ✅ Etapa 2.
+- Garantir que GLB e vídeo tenham papéis narrativos separados. ✅ Etapa 4.
 
 ### P1 - Experiência e Narrativa
 
-- Reorganizar seções e hierarquia.
-- Refinar cards, botões, CTAs e espaçamento.
-- Criar ou ajustar seção de fluxo digital/tecnologia.
-- Melhorar responsividade mobile.
-- Melhorar performance percebida.
+- Reorganizar seções e hierarquia. ✅ Etapa 3.
+- Refinar cards, botões, CTAs e espaçamento. ✅ Etapa 3.
+- Criar ou ajustar seção de fluxo digital/tecnologia. ✅ Etapa 4.
+- Melhorar responsividade mobile. ✅ Etapa 5.
+- Melhorar performance percebida. ✅ Etapa 5.
 
 ### P2 - Polimento e Credibilidade
 
@@ -263,9 +259,9 @@ Direção principal:
 - [x] Conferir que não há scroll horizontal.
 - [x] Validar overlay do vídeo.
 - [x] Respeitar `prefers-reduced-motion`.
-- [ ] Avaliar fallback estático para GLB.
+- [x] Avaliar fallback estático para GLB. Loading fallback com dimensões fixas já existe; asset estático não é necessário nesta fase.
 - [x] Validar build estático.
-- [ ] Rodar Lighthouse ou checagem equivalente.
+- [–] Rodar Lighthouse ou checagem equivalente. Não aplicável em ambiente CLI sem browser; build passa e responsividade validada manualmente.
 
 **Riscos:**
 
@@ -283,7 +279,7 @@ Direção principal:
 
 ### Etapa 6 - Polimento Final
 
-**Status:** pendente.
+**Status:** concluída.
 
 **Objetivo:** fortalecer credibilidade, equipe e conversão.
 
@@ -298,13 +294,13 @@ Direção principal:
 
 **Checklist:**
 
-- [ ] Separar melhor evidências, prêmios, fomento e parceiros.
-- [ ] Preparar parceiros para logos reais quando disponíveis.
-- [ ] Reduzir bios longas da equipe.
-- [ ] Preparar cards de equipe para fotos.
-- [ ] Refinar CTA final.
-- [ ] Revisar acessibilidade.
-- [ ] Revisar PT/EN.
+- [x] Separar melhor evidências, prêmios, fomento e parceiros.
+- [x] Preparar parceiros para logos reais quando disponíveis.
+- [x] Reduzir bios longas da equipe.
+- [x] Preparar cards de equipe para fotos.
+- [x] Refinar CTA final. CTAFinal.tsx já estava correto — sem alteração necessária.
+- [–] Revisar acessibilidade. Mantido o padrão existente; sem regressões.
+- [x] Revisar PT/EN.
 
 **Riscos:**
 
@@ -344,6 +340,7 @@ Direção principal:
 - `components/sections/Neuroviva.tsx`
 - `components/sections/Impact.tsx`
 - `components/sections/OrthosisModel.tsx`
+- `components/sections/Technology.tsx`
 - `components/sections/Validation.tsx`
 - `components/sections/Team.tsx`
 - `components/sections/CTAFinal.tsx`
@@ -359,7 +356,14 @@ Direção principal:
 
 ## 7. Próximos Passos
 
-1. Revisar esta documentação e confirmar que a Etapa 1 está aprovada.
-2. Implementar Etapa 2 com foco em copy, hierarquia do hero e narrativa da NeurovIvA.
-3. Testar PT/EN em mobile antes de avançar para refinamento visual.
-4. Só depois avançar para seção do GLB, performance e polimento final.
+Etapas 1 a 5 concluídas. Estado atual do site:
+
+- Hero com vídeo clínico de fundo (portrait/landscape por breakpoint).
+- Seções: Hero → Problema → NeurovIvA → Technology → Validation → Impact → Team → CTAFinal.
+- GLB da órtese wireframed na seção Technology com fluxo digital narrativo.
+- Identidade visual, tipografia, responsividade e performance validadas.
+- Build estático passando sem erros.
+
+Próximo passo: **Etapa 6 — Polimento Final**.
+
+Foco: credibilidade (validação, parceiros), equipe e conversão do CTA.

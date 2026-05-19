@@ -20,15 +20,11 @@ export function Team({ dict }: Props) {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <span className="section-eyebrow">
-            {equipe.eyebrow}
-          </span>
-          <h2 className="section-title-dark mt-4">
-            {equipe.headline}
-          </h2>
+          <span className="section-eyebrow">{equipe.eyebrow}</span>
+          <h2 className="section-title-dark mt-4">{equipe.headline}</h2>
         </motion.div>
 
-        <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 xl:grid-cols-4">
           {equipe.members.map((member, index) => (
             <motion.article
               key={member.name}
@@ -38,12 +34,22 @@ export function Team({ dict }: Props) {
               transition={{ duration: 0.55, delay: index * 0.1 }}
               className="card-light card-pad flex flex-col"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-teal/20 bg-teal-bg font-heading text-xl font-black text-navy">
-                {member.name
-                  .split(" ")
-                  .slice(0, 2)
-                  .map((part) => part[0])
-                  .join("")}
+              <div className="relative h-16 w-16 overflow-hidden rounded-full border border-teal/20 bg-teal-bg">
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center font-heading text-xl font-black text-navy">
+                    {member.name
+                      .split(" ")
+                      .slice(0, 2)
+                      .map((part) => part[0])
+                      .join("")}
+                  </div>
+                )}
               </div>
               <h3 className="mt-6 font-heading text-[1.28rem] font-bold leading-tight text-navy">
                 {member.name}
@@ -51,12 +57,7 @@ export function Team({ dict }: Props) {
               <p className="mt-2 text-sm font-bold uppercase leading-snug tracking-[0.08em] text-teal">
                 {member.role}
               </p>
-              <p className="caption-copy-dark mt-5">
-                {member.bio}
-              </p>
-              <p className="mt-5 border-t border-navy/10 pt-4 text-[0.95rem] font-semibold leading-relaxed text-navy">
-                {member.specialty}
-              </p>
+              <p className="caption-copy-dark mt-5">{member.bio}</p>
             </motion.article>
           ))}
         </div>
