@@ -53,7 +53,7 @@ export function Technology({ dict }: Props) {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <ol className="grid grid-cols-2 gap-x-6 gap-y-5">
+            <ol className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-5">
               {technology.steps.map((step, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span

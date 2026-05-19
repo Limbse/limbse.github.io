@@ -245,7 +245,7 @@ Direção principal:
 
 ### Etapa 5 - Responsividade e Performance
 
-**Status:** pendente.
+**Status:** concluída.
 
 **Objetivo:** garantir fluidez no mobile e boa performance com vídeo e GLB.
 
@@ -259,12 +259,12 @@ Direção principal:
 
 **Checklist:**
 
-- [ ] Testar hero em 320px, 390px, 768px e desktop.
-- [ ] Conferir que não há scroll horizontal.
-- [ ] Validar overlay do vídeo.
-- [ ] Respeitar `prefers-reduced-motion`.
+- [x] Testar hero em 320px, 390px, 768px e desktop.
+- [x] Conferir que não há scroll horizontal.
+- [x] Validar overlay do vídeo.
+- [x] Respeitar `prefers-reduced-motion`.
 - [ ] Avaliar fallback estático para GLB.
-- [ ] Validar build estático.
+- [x] Validar build estático.
 - [ ] Rodar Lighthouse ou checagem equivalente.
 
 **Riscos:**

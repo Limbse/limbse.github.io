@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { Dictionary } from "@/lib/dictionaries";
 import { getWhatsAppUrl, hasWhatsAppNumber, siteConfig } from "@/lib/site-config";
 
@@ -10,6 +10,7 @@ interface Props {
 
 export function Hero({ dict }: Props) {
   const { hero } = dict;
+  const reducedMotion = useReducedMotion();
   const useWhatsApp = dict.lang === "pt" && hasWhatsAppNumber();
   const contactHref =
     useWhatsApp
@@ -22,7 +23,7 @@ export function Hero({ dict }: Props) {
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-navy lg:h-screen"
     >
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
         autoPlay
         muted
         loop
@@ -30,11 +31,17 @@ export function Hero({ dict }: Props) {
         preload="metadata"
         aria-hidden="true"
       >
-        <source
-          src="/assets/videos/clinica-fitting-vertical.mp4"
-          type="video/mp4"
-          media="(max-width: 767px)"
-        />
+        <source src="/assets/videos/clinica-fitting-vertical.mp4" type="video/mp4" />
+      </video>
+      <video
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
         <source src="/assets/videos/clinica-fitting.mp4" type="video/mp4" />
       </video>
 
@@ -109,7 +116,7 @@ export function Hero({ dict }: Props) {
         aria-hidden="true"
       >
         <motion.div
-          animate={{ y: [0, 7, 0] }}
+          animate={reducedMotion ? {} : { y: [0, 7, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           className="flex h-9 w-5 items-start justify-center rounded-full border border-white/20 pt-1.5"
         >
