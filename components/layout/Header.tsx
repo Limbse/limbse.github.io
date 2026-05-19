@@ -35,9 +35,9 @@ export function Header({ dict }: Props) {
 
   const navLinks = [
     { label: nav.produto, href: "#produto" },
+    { label: nav.tecnologia, href: "#tecnologia" },
     { label: nav.validacao, href: "#validacao" },
     { label: nav.equipe, href: "#equipe" },
-    { label: nav.contato, href: "#contato" },
   ];
 
   return (

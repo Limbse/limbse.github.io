@@ -1,7 +1,8 @@
 const pt = {
   lang: "pt",
   nav: {
-    produto: "Produto",
+    produto: "NeurovIvA",
+    tecnologia: "Tecnologia",
     validacao: "Validação",
     equipe: "Equipe",
     contato: "Contato",
@@ -212,7 +213,8 @@ export type Dictionary = typeof pt;
 const en: Dictionary = {
   lang: "en",
   nav: {
-    produto: "Product",
+    produto: "NeurovIvA",
+    tecnologia: "Technology",
     validacao: "Validation",
     equipe: "Team",
     contato: "Contact",

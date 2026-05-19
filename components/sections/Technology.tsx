@@ -22,7 +22,7 @@ export function Technology({ dict }: Props) {
   const { technology } = dict;
 
   return (
-    <section className="section-pad relative overflow-hidden bg-navy">
+    <section id="tecnologia" className="section-pad relative overflow-hidden bg-navy">
       <div
         className="absolute inset-0 opacity-[0.06]"
         style={{
