@@ -65,9 +65,7 @@ export function Hero({ dict }: Props) {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="font-heading text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
-            {hero.headline1}
-            <br />
-            <span className="text-teal">{hero.headline2}</span>
+            {hero.headline}
           </motion.h1>
 
           <motion.p

@@ -16,53 +16,53 @@ const pt = {
       "Olá, gostaria de conversar sobre parceria ou investimento na Limbse.",
   },
   hero: {
-    headline1: "Design que Transforma.",
-    headline2: "Tecnologia que Fortalece.",
+    headline: "Reabilitação pós-AVC com tecnologia personalizada",
     subheadline:
-      "Plataforma integrada de reabilitação pós-AVC com órtese 3D personalizada, prescrição digital e telereabilitação.",
+      "Prescrição digital, órtese e acompanhamento remoto em uma jornada integrada de cuidado",
     ctaPrimary: "Conheça a NeurovIvA",
     ctaSecondary: "Fale conosco",
     scrollLabel: "Rolar para baixo",
   },
   problema: {
-    headline: "Cada mês sem reabilitação custa caro - em todos os sentidos.",
+    headline: "O AVC não termina na alta. A reabilitação precisa continuar.",
     metrics: [
       {
         value: "344 mil",
-        label: "novos AVCs por ano no Brasil",
+        label: "novos casos de AVC por ano no Brasil",
         highlight: true,
       },
       {
         value: "67%",
-        label: "dos pacientes desenvolvem sequelas motoras",
+        label: "dos pacientes podem desenvolver sequelas motoras",
         highlight: false,
       },
       {
         value: "70%",
-        label: "dos casos são atendidos pelo SUS, sem estrutura suficiente",
+        label: "dos casos são atendidos pelo SUS",
         highlight: false,
       },
     ],
-    body: "Cada mês sem acesso à reabilitação especializada aumenta a rigidez, a dor e a dependência do paciente.",
+    body: "Quando o cuidado perde continuidade, aumentam rigidez, dor e dependência. A resposta precisa combinar acompanhamento, adesão terapêutica e órteses personalizadas para a vida real.",
   },
   neuroviva: {
     headline: "NeurovIvA",
-    subheadline: "Reabilitação integrada do início ao fim.",
+    subheadline: "Um ecossistema integrado para conectar prescrição, fabricação e acompanhamento.",
+    body: "A NeurovIvA organiza a jornada pós-AVC em uma linha de cuidado rastreável: o profissional prescreve, a órtese é personalizada por escâner tridimensional e fabricação por filamento fundido (FFF), e o paciente segue com telereabilitação apoiada por dados.",
     cards: [
       {
+        title: "Plataforma de Prescrição",
+        desc: "Profissionais configuram condutas, registram parâmetros clínicos e acompanham a evolução do cuidado.",
+        badge: "Prescrição e rastreabilidade",
+      },
+      {
         title: "Órtese 3D Personalizada",
-        desc: "Escaneamento 3D, design paramétrico e impressão com material nacional",
+        desc: "Escâner tridimensional, design paramétrico e fabricação por filamento fundido (FFF) com material nacional.",
         badge: "TRL 6 - estudo clínico ativo",
       },
       {
-        title: "Plataforma de Prescrição",
-        desc: "Profissionais prescrevem, configuram e acompanham remotamente",
-        badge: "Em aceleração In.cube InovaHC/USP",
-      },
-      {
         title: "App de Telereabilitação",
-        desc: "Exercícios supervisionados, monitoramento de adesão e teleatendimento",
-        badge: "Mobile-first - integrado ao SUS Digital",
+        desc: "Paciente e cuidador recebem exercícios supervisionados, lembretes e suporte para manter adesão em casa.",
+        badge: "Continuidade do cuidado",
       },
     ],
   },
@@ -137,13 +137,13 @@ const pt = {
     ],
   },
   cta: {
-    headline: "Pronto para conversar?",
+    headline: "Quer implementar reabilitação personalizada na sua instituição?",
     subheadline:
-      "Somos uma startup com tecnologia validada e time sério. Se você investe, pesquisa ou quer ser parceiro, vamos falar.",
-    primaryLabel: "Falar no WhatsApp",
+      "Converse com a Limbse sobre pilotos, parcerias e validação da NeurovIvA.",
+    primaryLabel: "Entrar em contato",
     secondaryLabel: "contato@limbse.com",
     whatsappMessage:
-      "Olá, gostaria de conversar sobre parceria ou investimento na Limbse.",
+      "Olá, gostaria de conversar sobre pilotos, parcerias ou validação da NeurovIvA.",
   },
   footer: {
     cnpj: "CNPJ 49.184.418/0001-95",
@@ -178,16 +178,15 @@ const en: Dictionary = {
       "Hello, I would like to talk about partnering with or investing in Limbse.",
   },
   hero: {
-    headline1: "Design that Transforms.",
-    headline2: "Technology that Empowers.",
+    headline: "Post-stroke rehabilitation with personalized technology",
     subheadline:
-      "Integrated post-stroke rehabilitation platform with personalized 3D orthosis, digital prescription and telerehabilitation.",
+      "Digital prescription, orthosis and remote follow-up in an integrated care journey",
     ctaPrimary: "Discover NeurovIvA",
     ctaSecondary: "Get in touch",
     scrollLabel: "Scroll down",
   },
   problema: {
-    headline: "Every month without rehabilitation has a cost - in every sense.",
+    headline: "Stroke care does not end at discharge. Rehabilitation needs continuity.",
     metrics: [
       {
         value: "344K",
@@ -196,36 +195,36 @@ const en: Dictionary = {
       },
       {
         value: "67%",
-        label: "of patients develop motor sequelae",
+        label: "of patients may develop motor sequelae",
         highlight: false,
       },
       {
         value: "70%",
-        label:
-          "of cases are treated by SUS, Brazil's public health system, without adequate resources",
+        label: "of cases are treated by SUS, Brazil's public health system",
         highlight: false,
       },
     ],
-    body: "Every month without specialized rehabilitation increases stiffness, pain, and dependency.",
+    body: "When care loses continuity, stiffness, pain and dependency increase. The response needs to combine follow-up, therapeutic adherence and personalized orthoses designed for real life.",
   },
   neuroviva: {
     headline: "NeurovIvA",
-    subheadline: "Integrated rehabilitation from start to finish.",
+    subheadline: "An integrated ecosystem connecting prescription, fabrication and follow-up.",
+    body: "NeurovIvA organizes the post-stroke journey into a traceable care pathway: professionals prescribe, the orthosis is personalized through three-dimensional scanning and fused filament fabrication (FFF), and patients continue telerehabilitation supported by data.",
     cards: [
       {
+        title: "Prescription Platform",
+        desc: "Healthcare professionals configure care plans, register clinical parameters and monitor rehabilitation progress.",
+        badge: "Prescription and traceability",
+      },
+      {
         title: "Personalized 3D Orthosis",
-        desc: "3D scanning, parametric design and printing with domestic materials",
+        desc: "Three-dimensional scanning, parametric design and fused filament fabrication (FFF) with domestic materials.",
         badge: "TRL 6 - active clinical study",
       },
       {
-        title: "Prescription Platform",
-        desc: "Healthcare professionals prescribe, configure and monitor remotely",
-        badge: "Accelerated at In.cube InovaHC/USP",
-      },
-      {
         title: "Telerehabilitation App",
-        desc: "Supervised exercises, adherence monitoring and teleconsultation",
-        badge: "Mobile-first - integrated with SUS Digital",
+        desc: "Patients and caregivers receive supervised exercises, reminders and support to sustain adherence at home.",
+        badge: "Continuity of care",
       },
     ],
   },
@@ -299,13 +298,13 @@ const en: Dictionary = {
     ],
   },
   cta: {
-    headline: "Ready to talk?",
+    headline: "Want to implement personalized rehabilitation in your institution?",
     subheadline:
-      "We're a startup with validated technology and a serious team. If you invest, research, or want to partner, let's talk.",
-    primaryLabel: "Email us",
+      "Talk to Limbse about pilots, partnerships and NeurovIvA validation.",
+    primaryLabel: "Get in touch",
     secondaryLabel: "Talk on WhatsApp",
     whatsappMessage:
-      "Hello, I would like to talk about partnering with or investing in Limbse.",
+      "Hello, I would like to talk about pilots, partnerships or NeurovIvA validation.",
   },
   footer: {
     cnpj: "CNPJ 49.184.418/0001-95",

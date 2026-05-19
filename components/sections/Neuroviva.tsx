@@ -9,6 +9,18 @@ interface Props {
 
 const cardIcons = [
   <svg
+    key="plataforma"
+    viewBox="0 0 48 48"
+    fill="none"
+    className="h-8 w-8"
+    aria-hidden="true"
+  >
+    <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" strokeWidth="2" />
+    <path d="M16 40H32M24 36V40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M12 20H24M12 26H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="34" cy="23" r="6" stroke="currentColor" strokeWidth="2" />
+  </svg>,
+  <svg
     key="ortese"
     viewBox="0 0 48 48"
     fill="none"
@@ -27,18 +39,6 @@ const cardIcons = [
       strokeWidth="1"
       strokeDasharray="3 3"
     />
-  </svg>,
-  <svg
-    key="plataforma"
-    viewBox="0 0 48 48"
-    fill="none"
-    className="h-8 w-8"
-    aria-hidden="true"
-  >
-    <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" strokeWidth="2" />
-    <path d="M16 40H32M24 36V40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <path d="M12 20H24M12 26H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="34" cy="23" r="6" stroke="currentColor" strokeWidth="2" />
   </svg>,
   <svg
     key="app"
@@ -72,6 +72,9 @@ export function Neuroviva({ dict }: Props) {
           <h2 className="mt-3 max-w-2xl font-heading text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
             {neuroviva.subheadline}
           </h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/70 lg:text-lg">
+            {neuroviva.body}
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

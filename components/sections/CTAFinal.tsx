@@ -17,7 +17,7 @@ export function CTAFinal({ dict }: Props) {
   const secondaryHref = useWhatsAppPrimary || dict.lang === "pt"
     ? `mailto:${siteConfig.email}`
     : getWhatsAppUrl(cta.whatsappMessage);
-  const primaryLabel = useWhatsAppPrimary ? cta.primaryLabel : siteConfig.email;
+  const primaryLabel = cta.primaryLabel;
   const showSecondary = useWhatsAppPrimary || (dict.lang === "en" && hasWhatsAppNumber());
 
   return (
