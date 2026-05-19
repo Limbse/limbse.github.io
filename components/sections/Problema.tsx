@@ -20,8 +20,8 @@ export function Problema({ dict }: Props) {
   const { problema } = dict;
 
   return (
-    <section id="problema" className="bg-cream py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="problema" className="section-pad bg-cream">
+      <div className="section-container">
         {/* Headline */}
         <motion.h2
           initial="hidden"
@@ -29,13 +29,13 @@ export function Problema({ dict }: Props) {
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
           variants={fadeUp}
-          className="font-heading font-extrabold text-navy text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-3xl"
+          className="section-title-dark max-w-3xl"
         >
           {problema.headline}
         </motion.h2>
 
         {/* Metric cards */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-3 lg:gap-5">
           {problema.metrics.map((metric, i) => (
             <motion.div
               key={i}
@@ -44,11 +44,11 @@ export function Problema({ dict }: Props) {
               viewport={{ once: true, margin: "-80px" }}
               custom={i + 1}
               variants={fadeUp}
-              className="flex flex-col gap-4 rounded-2xl bg-white border border-light-gray shadow-sm p-8"
+              className="card-light card-pad flex min-h-56 flex-col gap-5"
             >
               {/* Value */}
               <div
-                className={`font-heading font-black leading-none text-5xl lg:text-6xl ${
+                className={`font-heading text-[3.35rem] font-black leading-none sm:text-[3.65rem] lg:text-[4.4rem] ${
                   metric.highlight ? "text-red-brand" : "text-navy"
                 }`}
               >
@@ -59,7 +59,7 @@ export function Problema({ dict }: Props) {
               <div className="h-0.5 w-10 rounded-full bg-teal" />
 
               {/* Label */}
-              <p className="font-body text-dark-gray text-sm leading-relaxed">
+              <p className="caption-copy-dark font-medium">
                 {metric.label}
               </p>
             </motion.div>
@@ -73,7 +73,7 @@ export function Problema({ dict }: Props) {
           viewport={{ once: true, margin: "-80px" }}
           custom={4}
           variants={fadeUp}
-          className="mt-10 max-w-2xl font-body text-dark-gray/70 text-base lg:text-lg leading-relaxed"
+          className="body-copy-dark mt-10 max-w-2xl"
         >
           {problema.body}
         </motion.p>

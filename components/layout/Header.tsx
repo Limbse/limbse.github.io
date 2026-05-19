@@ -45,22 +45,22 @@ export function Header({ dict }: Props) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || menuOpen
-            ? "bg-navy/95 backdrop-blur-sm shadow-lg"
-            : "bg-gradient-to-b from-black/40 to-transparent"
+            ? "border-b border-white/10 bg-navy/94 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-md"
+            : "bg-gradient-to-b from-navy/78 via-navy/38 to-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="section-container">
+          <div className="flex h-16 items-center justify-between lg:h-[4.75rem]">
             <Link
               href={`/${dict.lang}`}
-              className="flex-shrink-0 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal"
+              className="flex min-h-11 flex-shrink-0 items-center rounded"
             >
               <Image
                 src="/assets/logo_branco.svg"
                 alt="Limbse"
-                width={120}
+                width={112}
                 height={32}
-                style={{ width: 120, height: "auto" }}
+                style={{ width: 112, height: "auto" }}
                 priority
               />
             </Link>
@@ -73,17 +73,17 @@ export function Header({ dict }: Props) {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-body text-white/80 transition-colors duration-200 hover:text-teal"
+                  className="rounded-sm text-sm font-medium text-white/78 transition-colors duration-200 hover:text-white"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
 
-            <div className="hidden items-center gap-4 lg:flex">
+            <div className="hidden items-center gap-3 lg:flex">
               <Link
                 href={nav.toggleHref}
-                className="text-sm font-body text-white/60 transition-colors duration-200 hover:text-white"
+                className="rounded-sm px-2 py-2 text-sm font-medium text-white/62 transition-colors duration-200 hover:text-white"
               >
                 {nav.toggle}
               </Link>
@@ -92,7 +92,7 @@ export function Header({ dict }: Props) {
                 target={useWhatsApp ? "_blank" : undefined}
                 rel={useWhatsApp ? "noopener noreferrer" : undefined}
                 aria-label={primaryContactLabel}
-                className="inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2 text-sm font-heading text-navy transition-colors duration-200 hover:bg-teal-light"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-teal/35 bg-teal/92 px-5 text-sm font-heading font-bold text-navy shadow-[0_10px_28px_rgba(59,183,162,0.18)] transition-colors duration-200 hover:bg-teal-light"
               >
                 {primaryContactLabel}
               </a>
@@ -101,7 +101,7 @@ export function Header({ dict }: Props) {
             <div className="flex items-center gap-3 lg:hidden">
               <Link
                 href={nav.toggleHref}
-                className="px-1 text-sm text-white/70 transition-colors hover:text-white"
+                className="flex min-h-11 items-center rounded px-2 text-sm font-medium text-white/72 transition-colors hover:text-white"
               >
                 {nav.toggle}
               </Link>
@@ -109,7 +109,7 @@ export function Header({ dict }: Props) {
                 onClick={() => setMenuOpen((v) => !v)}
                 aria-label={menuOpen ? nav.closeLabel : nav.menuLabel}
                 aria-expanded={menuOpen}
-                className="flex h-11 w-11 items-center justify-center rounded-lg text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal"
+                className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white backdrop-blur-sm"
               >
                 <span className="sr-only">
                   {menuOpen ? nav.closeLabel : nav.menuLabel}
@@ -147,7 +147,7 @@ export function Header({ dict }: Props) {
             className="fixed inset-0 z-40 flex flex-col bg-navy lg:hidden"
             style={{ paddingTop: "64px" }}
           >
-            <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-12 pt-10">
+            <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-12 pt-8">
               <nav className="flex flex-col gap-2" aria-label={nav.mobileAriaLabel}>
                 {navLinks.map((link, i) => (
                   <motion.a
@@ -157,7 +157,7 @@ export function Header({ dict }: Props) {
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 + i * 0.07 }}
-                    className="flex min-h-[56px] items-center border-b border-white/8 text-2xl font-heading font-bold text-white transition-colors hover:text-teal active:text-teal"
+                    className="flex min-h-14 items-center border-b border-white/10 text-[1.45rem] font-heading font-bold leading-tight text-white transition-colors hover:text-teal active:text-teal"
                   >
                     {link.label}
                   </motion.a>
@@ -174,7 +174,7 @@ export function Header({ dict }: Props) {
                   target={useWhatsApp ? "_blank" : undefined}
                   rel={useWhatsApp ? "noopener noreferrer" : undefined}
                   onClick={() => setMenuOpen(false)}
-                  className="flex h-14 w-full items-center justify-center rounded-full bg-teal text-base font-heading font-bold text-navy transition-colors hover:bg-teal-light"
+                  className="btn-base btn-primary w-full"
                 >
                   {primaryContactLabel}
                 </a>

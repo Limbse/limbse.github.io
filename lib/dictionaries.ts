@@ -16,7 +16,7 @@ const pt = {
       "Olá, gostaria de conversar sobre parceria ou investimento na Limbse.",
   },
   hero: {
-    headline: "Reabilitação pós-AVC com tecnologia personalizada",
+    headline: "Reabilitação pós-AVC com tecnologia",
     subheadline:
       "Prescrição digital, órtese e acompanhamento remoto em uma jornada integrada de cuidado",
     ctaPrimary: "Conheça a NeurovIvA",
@@ -178,7 +178,7 @@ const en: Dictionary = {
       "Hello, I would like to talk about partnering with or investing in Limbse.",
   },
   hero: {
-    headline: "Post-stroke rehabilitation with personalized technology",
+    headline: "Post-stroke rehabilitation with technology",
     subheadline:
       "Digital prescription, orthosis and remote follow-up in an integrated care journey",
     ctaPrimary: "Discover NeurovIvA",

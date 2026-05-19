@@ -22,7 +22,7 @@ export function Impact({ dict }: Props) {
   const { impacto } = dict;
 
   return (
-    <section className="relative overflow-hidden bg-navy py-24 lg:py-32">
+    <section className="section-pad relative overflow-hidden bg-navy">
       <div
         className="absolute inset-0 opacity-[0.06]"
         style={{
@@ -33,26 +33,26 @@ export function Impact({ dict }: Props) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.85fr] lg:items-center lg:px-8">
+      <div className="section-container relative z-10 grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-body text-sm uppercase tracking-widest text-teal">
+          <span className="section-eyebrow">
             {impacto.eyebrow}
           </span>
-          <h2 className="mt-3 font-heading text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="section-title-light mt-4">
             {impacto.headline}
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 lg:text-lg">
+          <p className="body-copy-light mt-6 max-w-2xl">
             {impacto.body}
           </p>
-          <blockquote className="mt-8 border-l-2 border-teal pl-5 font-heading text-2xl font-bold leading-snug text-teal-light">
+          <blockquote className="mt-8 max-w-2xl border-l-2 border-teal pl-5 font-heading text-[1.55rem] font-bold leading-snug text-teal-light sm:text-3xl">
             {impacto.quote}
           </blockquote>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45">
+          <p className="caption-copy-light mt-6 max-w-xl">
             {impacto.note}
           </p>
         </motion.div>

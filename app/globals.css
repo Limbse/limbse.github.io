@@ -21,8 +21,204 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  max-width: 100%;
+  overflow-x: clip;
+  background: var(--color-cream);
+  color: var(--color-dark-gray);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@supports not (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+::selection {
+  background: var(--color-teal-pale);
+  color: var(--color-navy);
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 4px;
+}
+
+@layer components {
+  .section-pad {
+    padding-block: clamp(4.75rem, 8vw, 8rem);
+  }
+
+  .section-pad-lg {
+    padding-block: clamp(5.5rem, 9vw, 9rem);
+  }
+
+  .section-container {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 640px) {
+    .section-container {
+      width: min(100% - 3rem, 80rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-container {
+      width: min(100% - 4rem, 80rem);
+    }
+  }
+
+  .section-eyebrow {
+    font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+    font-size: clamp(0.78rem, 1vw, 0.875rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--color-teal);
+  }
+
+  .section-title-dark,
+  .section-title-light {
+    font-family: var(--font-montserrat), "Montserrat", sans-serif;
+    font-size: clamp(2rem, 7vw, 3.35rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+
+  .section-title-dark {
+    color: var(--color-navy);
+  }
+
+  .section-title-light {
+    color: #fff;
+  }
+
+  .body-copy-dark,
+  .body-copy-light {
+    font-size: clamp(1rem, 1.7vw, 1.125rem);
+    line-height: 1.7;
+  }
+
+  .body-copy-dark {
+    color: rgb(43 47 51 / 0.76);
+  }
+
+  .body-copy-light {
+    color: rgb(255 255 255 / 0.72);
+  }
+
+  .caption-copy-dark,
+  .caption-copy-light {
+    font-size: clamp(0.93rem, 1.3vw, 1rem);
+    line-height: 1.65;
+  }
+
+  .caption-copy-dark {
+    color: rgb(43 47 51 / 0.72);
+  }
+
+  .caption-copy-light {
+    color: rgb(255 255 255 / 0.58);
+  }
+
+  .card-light {
+    border: 1px solid rgb(14 30 53 / 0.1);
+    border-radius: 0.5rem;
+    background: rgb(255 255 255 / 0.96);
+    box-shadow: 0 16px 48px rgb(14 30 53 / 0.08);
+  }
+
+  .card-dark {
+    border: 1px solid rgb(255 255 255 / 0.12);
+    border-radius: 0.5rem;
+    background: rgb(255 255 255 / 0.055);
+    box-shadow: 0 18px 56px rgb(0 0 0 / 0.12);
+  }
+
+  .card-pad {
+    padding: clamp(1.35rem, 4vw, 2rem);
+  }
+
+  .btn-base {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding-inline: 1.5rem;
+    font-family: var(--font-montserrat), "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease,
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .btn-base:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-base:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .btn-primary {
+    background: var(--color-teal);
+    color: var(--color-navy);
+    box-shadow: 0 12px 30px rgb(59 183 162 / 0.22);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-teal-light);
+    box-shadow: 0 16px 38px rgb(59 183 162 / 0.28);
+  }
+
+  .btn-secondary-light {
+    border: 1px solid rgb(14 30 53 / 0.16);
+    color: var(--color-navy);
+  }
+
+  .btn-secondary-light:hover {
+    border-color: rgb(14 30 53 / 0.35);
+    background: rgb(14 30 53 / 0.04);
+  }
+
+  .btn-secondary-dark {
+    border: 1px solid rgb(255 255 255 / 0.28);
+    color: #fff;
+  }
+
+  .btn-secondary-dark:hover {
+    border-color: rgb(255 255 255 / 0.58);
+    background: rgb(255 255 255 / 0.075);
+  }
 }

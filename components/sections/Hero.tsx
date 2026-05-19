@@ -19,7 +19,7 @@ export function Hero({ dict }: Props) {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen flex-col overflow-hidden bg-navy lg:h-screen"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-navy lg:h-screen"
     >
       <video
         className="absolute inset-0 h-full w-full object-cover"
@@ -52,18 +52,18 @@ export function Hero({ dict }: Props) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(14,30,53,0.3) 0%, rgba(14,30,53,0.7) 60%, rgba(14,30,53,1) 100%)",
+            "linear-gradient(180deg, rgba(14,30,53,0.78) 0%, rgba(14,30,53,0.46) 38%, rgba(14,30,53,0.86) 74%, rgba(14,30,53,1) 100%), linear-gradient(90deg, rgba(14,30,53,0.92) 0%, rgba(14,30,53,0.55) 48%, rgba(14,30,53,0.28) 100%)",
         }}
         aria-hidden="true"
       />
 
       <div className="relative z-10 flex flex-1 flex-col justify-end">
-        <div className="mx-auto w-full max-w-5xl px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
+        <div className="section-container pb-24 pt-28 sm:pb-28 lg:pb-32">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="font-heading text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="max-w-[13ch] font-heading text-[2.45rem] font-black leading-[1.02] tracking-normal text-white sm:max-w-4xl sm:text-[4rem] lg:text-[5.25rem]"
           >
             {hero.headline}
           </motion.h1>
@@ -72,7 +72,7 @@ export function Hero({ dict }: Props) {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.43 }}
-            className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg"
+            className="mt-6 max-w-2xl text-[1.04rem] leading-[1.68] text-white/82 sm:text-xl"
           >
             {hero.subheadline}
           </motion.p>
@@ -81,11 +81,11 @@ export function Hero({ dict }: Props) {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
+            className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
           >
             <a
               href="#produto"
-              className="flex h-13 items-center justify-center rounded-full bg-teal px-8 text-base font-heading font-bold text-navy transition-all duration-200 hover:bg-teal-light active:scale-95 sm:h-12"
+              className="btn-base btn-primary w-full sm:w-auto"
             >
               {hero.ctaPrimary}
             </a>
@@ -93,7 +93,7 @@ export function Hero({ dict }: Props) {
               href={contactHref}
               target={useWhatsApp ? "_blank" : undefined}
               rel={useWhatsApp ? "noopener noreferrer" : undefined}
-              className="flex h-13 items-center justify-center rounded-full border border-white/25 px-8 text-base font-heading font-bold text-white transition-all duration-200 hover:border-white/60 hover:bg-white/5 active:scale-95 sm:h-12"
+              className="btn-base btn-secondary-dark w-full sm:w-auto"
             >
               {hero.ctaSecondary}
             </a>

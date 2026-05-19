@@ -57,27 +57,27 @@ export function Neuroviva({ dict }: Props) {
   const { neuroviva } = dict;
 
   return (
-    <section id="produto" className="bg-navy-deep py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="produto" className="section-pad bg-navy-deep">
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-11 sm:mb-14"
         >
-          <span className="font-body text-sm uppercase tracking-widest text-teal">
+          <span className="section-eyebrow">
             {neuroviva.headline}
           </span>
-          <h2 className="mt-3 max-w-2xl font-heading text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="section-title-light mt-4 max-w-2xl">
             {neuroviva.subheadline}
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/70 lg:text-lg">
+          <p className="body-copy-light mt-5 max-w-3xl">
             {neuroviva.body}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-5">
           {neuroviva.cards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -85,21 +85,23 @@ export function Neuroviva({ dict }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group relative flex flex-col gap-5 rounded-lg border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-teal/30 hover:bg-white/8"
+              className="card-dark card-pad group relative flex min-h-72 flex-col gap-5 transition-all duration-300 hover:border-teal/35 hover:bg-white/10"
             >
-              <div className="text-teal">{cardIcons[i]}</div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10 text-teal ring-1 ring-teal/20">
+                {cardIcons[i]}
+              </div>
 
               <div className="flex flex-1 flex-col gap-3">
-                <h3 className="font-heading text-xl font-bold leading-snug text-white">
+                <h3 className="font-heading text-[1.25rem] font-bold leading-snug text-white">
                   {card.title}
                 </h3>
-                <p className="text-base leading-relaxed text-white/60">
+                <p className="caption-copy-light">
                   {card.desc}
                 </p>
               </div>
 
-              <div className="inline-flex self-start items-center rounded-full border border-teal/30 bg-teal/10 px-3 py-1">
-                <span className="text-xs text-teal">{card.badge}</span>
+              <div className="inline-flex self-start items-center rounded-full border border-teal/30 bg-teal/10 px-3.5 py-1.5">
+                <span className="text-sm font-medium text-teal-light">{card.badge}</span>
               </div>
 
               <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-teal/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

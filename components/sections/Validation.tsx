@@ -20,8 +20,8 @@ export function Validation({ dict }: Props) {
   const { validacao } = dict;
 
   return (
-    <section id="validacao" className="bg-cream py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="validacao" className="section-pad bg-cream">
+      <div className="section-container">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -30,18 +30,18 @@ export function Validation({ dict }: Props) {
           variants={fadeUp}
           className="max-w-3xl"
         >
-          <span className="font-body text-sm uppercase tracking-widest text-teal">
+          <span className="section-eyebrow">
             {validacao.eyebrow}
           </span>
-          <h2 className="mt-3 font-heading text-3xl font-black leading-tight text-navy sm:text-4xl lg:text-5xl">
+          <h2 className="section-title-dark mt-4">
             {validacao.headline}
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-dark-gray/75 lg:text-lg">
+          <p className="body-copy-dark mt-5">
             {validacao.body}
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-2">
           <ValidationList
             title={validacao.evidenceTitle}
             items={validacao.evidence}
@@ -60,16 +60,16 @@ export function Validation({ dict }: Props) {
           viewport={{ once: true, margin: "-80px" }}
           custom={3}
           variants={fadeUp}
-          className="mt-14"
+          className="mt-12 lg:mt-14"
         >
-          <h3 className="font-heading text-xl font-bold text-navy">
+          <h3 className="font-heading text-[1.35rem] font-bold leading-tight text-navy">
             {validacao.partnersTitle}
           </h3>
-          <div className="mt-5 flex gap-3 overflow-x-auto pb-3 sm:grid sm:grid-cols-4 sm:overflow-visible lg:grid-cols-8">
+          <div className="mt-5 flex gap-3 overflow-x-auto pb-3 sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0 lg:grid-cols-8">
             {validacao.partners.map((partner) => (
               <div
                 key={partner}
-                className="flex min-h-20 min-w-36 shrink-0 items-center justify-center rounded-lg border border-light-gray bg-white px-4 text-center text-sm font-medium text-dark-gray shadow-sm sm:min-w-0"
+                className="card-light flex min-h-20 min-w-36 shrink-0 items-center justify-center px-4 text-center text-sm font-semibold leading-snug text-dark-gray sm:min-w-0"
               >
                 {partner}
               </div>
@@ -97,12 +97,12 @@ function ValidationList({
       viewport={{ once: true, margin: "-80px" }}
       custom={index}
       variants={fadeUp}
-      className="rounded-lg border border-light-gray bg-white p-7 shadow-sm"
+      className="card-light card-pad"
     >
-      <h3 className="font-heading text-xl font-bold text-navy">{title}</h3>
+      <h3 className="font-heading text-[1.35rem] font-bold leading-tight text-navy">{title}</h3>
       <ul className="mt-5 space-y-4">
         {items.map((item) => (
-          <li key={item} className="flex gap-3 text-sm leading-relaxed text-dark-gray/75">
+          <li key={item} className="flex gap-3 caption-copy-dark">
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal" />
             <span>{item}</span>
           </li>

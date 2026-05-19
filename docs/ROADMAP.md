@@ -1,6 +1,6 @@
 # Roadmap do Redesign Limbse / NeurovIvA
 
-**Status geral:** documentação de design em atualização; implementação visual incremental ainda não iniciada.  
+**Status geral:** Etapas 1 e 2 concluídas; há refinamentos visuais manuais já aplicados e mantidos no working tree.  
 **Objetivo:** acompanhar o redesign da landing page preservando o que já funciona e evitando mudanças grandes de uma só vez.
 
 ---
@@ -32,14 +32,12 @@ Direção principal:
 - Site bilíngue com rotas PT/EN.
 - Contato via WhatsApp/e-mail.
 - Documentação de design atualizada para refletir o estado real do site.
+- Etapa 2 concluída: copy/hierarquia da home atualizadas em PT e EN, hero sem tagline, NeurovIvA reposicionada como ecossistema integrado e CTA final institucional.
 
 ---
 
 ## 3. Tarefas Pendentes
 
-- Ajustar copy e hierarquia do hero.
-- Reorganizar narrativa da NeurovIvA como ecossistema integrado.
-- Melhorar leitura da seção de problema e dos cards numéricos.
 - Criar ou refinar seção de fluxo digital/tecnologia para contextualizar o GLB.
 - Refinar contraste, espaçamento, cards, botões e CTAs.
 - Melhorar validação científica, reconhecimentos e parceiros.
@@ -57,8 +55,8 @@ Direção principal:
 
 - Atualizar documentação de design.
 - Criar roadmap.
-- Revisar copy principal do hero.
-- Reposicionar NeurovIvA como ecossistema.
+- Revisar copy principal do hero. ✅ Concluído na Etapa 2.
+- Reposicionar NeurovIvA como ecossistema. ✅ Concluído na Etapa 2.
 - Garantir que GLB e vídeo tenham papéis narrativos separados.
 
 ### P1 - Experiência e Narrativa
@@ -119,7 +117,7 @@ Direção principal:
 
 ### Etapa 2 - Conteúdo e Hierarquia da Home
 
-**Status:** pendente.
+**Status:** concluída.
 
 **Objetivo:** tornar a mensagem principal clara e reposicionar a NeurovIvA como plataforma integrada.
 
@@ -133,13 +131,22 @@ Direção principal:
 
 **Checklist:**
 
-- [ ] Atualizar H1 e subtítulo do hero.
-- [ ] Reposicionar slogan como frase secundária.
-- [ ] Ajustar CTAs do hero.
-- [ ] Melhorar fechamento narrativo da seção Problema.
-- [ ] Reordenar pilares da NeurovIvA.
-- [ ] Atualizar CTA final para parcerias, pilotos e validação.
-- [ ] Manter PT e EN consistentes.
+- [x] Atualizar H1 e subtítulo do hero.
+- [x] Remover tagline do hero conforme ajuste manual aprovado.
+- [x] Ajustar CTAs do hero.
+- [x] Melhorar fechamento narrativo da seção Problema.
+- [x] Reordenar pilares da NeurovIvA.
+- [x] Atualizar CTA final para parcerias, pilotos e validação.
+- [x] Manter PT e EN consistentes.
+
+**Auditoria da Etapa 2:**
+
+- `lib/dictionaries.ts` atualizado em PT e EN.
+- `components/sections/Hero.tsx` atualizado para usar `hero.headline` e `hero.subheadline`, sem tagline.
+- `components/sections/Problema.tsx` atualizado e consumindo a nova copy da seção Problema.
+- `components/sections/Neuroviva.tsx` atualizado com texto de ecossistema integrado e ordem dos cards: Plataforma de Prescrição -> Órtese 3D Personalizada -> App de Telereabilitação.
+- `components/sections/CTAFinal.tsx` atualizado para CTA institucional.
+- Alterações manuais fora do escopo da Etapa 2 foram detectadas e mantidas por decisão da equipe.
 
 **Riscos:**
 
@@ -151,12 +158,13 @@ Direção principal:
 - Visitante entende em poucos segundos o que é a NeurovIvA.
 - A NeurovIvA aparece como ecossistema integrado.
 - CTAs permanecem claros e funcionais.
+- Status final da auditoria: concluído.
 
 ---
 
 ### Etapa 3 - Refinamento Visual Global
 
-**Status:** pendente.
+**Status:** concluida nesta etapa.
 
 **Objetivo:** melhorar hierarquia visual, contraste, espaçamento e consistência.
 
@@ -168,17 +176,19 @@ Direção principal:
 - `components/sections/Problema.tsx`
 - `components/sections/Neuroviva.tsx`
 - `components/sections/Validation.tsx`
+- `components/sections/Impact.tsx`
 - `components/sections/Team.tsx`
 - `components/sections/CTAFinal.tsx`
 
 **Checklist:**
 
-- [ ] Padronizar espaçamentos por seção.
-- [ ] Padronizar cards em fundos claros e escuros.
-- [ ] Refinar botões primários e secundários.
-- [ ] Ajustar contraste e legibilidade.
-- [ ] Refinar header sobre o vídeo.
-- [ ] Evitar que todas as seções pareçam o mesmo grid de cards.
+- [x] Padronizar espaçamentos por seção.
+- [x] Padronizar cards em fundos claros e escuros.
+- [x] Refinar botões primários e secundários.
+- [x] Ajustar contraste e legibilidade.
+- [x] Refinar header sobre o vídeo.
+- [x] Evitar que todas as seções pareçam o mesmo grid de cards.
+- [x] Validar `npm run build`.
 
 **Riscos:**
 

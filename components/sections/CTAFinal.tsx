@@ -23,14 +23,18 @@ export function CTAFinal({ dict }: Props) {
   return (
     <section
       id="contato"
-      className="relative overflow-hidden py-28 lg:py-40"
+      className="section-pad-lg relative overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #0E1E35 0%, #10315A 100%)",
       }}
     >
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-10 blur-3xl"
-        style={{ background: "#3BB7A2" }}
+        className="pointer-events-none absolute inset-0 opacity-[0.055]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(111,207,192,1) 1px, transparent 1px), linear-gradient(90deg, rgba(111,207,192,1) 1px, transparent 1px)",
+          backgroundSize: "46px 46px",
+        }}
         aria-hidden="true"
       />
 
@@ -40,7 +44,7 @@ export function CTAFinal({ dict }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl"
+          className="font-heading text-[2.2rem] font-black leading-[1.08] text-white sm:text-5xl lg:text-[3.75rem]"
         >
           {cta.headline}
         </motion.h2>
@@ -50,7 +54,7 @@ export function CTAFinal({ dict }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-6 text-lg leading-relaxed text-teal-light"
+          className="mx-auto mt-6 max-w-2xl text-[1.05rem] leading-relaxed text-teal-light sm:text-xl"
         >
           {cta.subheadline}
         </motion.p>
@@ -60,13 +64,13 @@ export function CTAFinal({ dict }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-9 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row"
         >
           <a
             href={primaryHref}
             target={useWhatsAppPrimary ? "_blank" : undefined}
             rel={useWhatsAppPrimary ? "noopener noreferrer" : undefined}
-            className="flex h-14 w-full items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 text-base font-heading font-bold text-white transition-all duration-200 hover:bg-[#1ebe5d] active:scale-95 sm:w-auto"
+            className="btn-base btn-primary w-full gap-3 sm:w-auto"
           >
             {useWhatsAppPrimary && <WhatsAppIcon />}
             {primaryLabel}
@@ -77,7 +81,7 @@ export function CTAFinal({ dict }: Props) {
               href={secondaryHref}
               target={dict.lang === "en" ? "_blank" : undefined}
               rel={dict.lang === "en" ? "noopener noreferrer" : undefined}
-              className="flex h-14 w-full items-center justify-center rounded-full border border-white/20 px-8 text-base font-heading font-bold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/5 active:scale-95 sm:w-auto"
+              className="btn-base btn-secondary-dark w-full sm:w-auto"
             >
               {cta.secondaryLabel}
             </a>
