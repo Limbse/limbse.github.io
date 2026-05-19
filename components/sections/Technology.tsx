@@ -57,12 +57,12 @@ export function Technology({ dict }: Props) {
               {technology.steps.map((step, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span
-                    className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-teal/30 bg-teal/10 font-heading text-sm font-bold text-teal"
+                    className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-teal/30 bg-teal/10 font-heading text-base font-bold text-teal"
                     aria-hidden="true"
                   >
                     {i + 1}
                   </span>
-                  <span className="pt-0.5 text-sm leading-snug text-white/80">
+                  <span className="pt-0.5 text-base leading-snug text-white/84 sm:text-[1.05rem]">
                     {step}
                   </span>
                 </li>

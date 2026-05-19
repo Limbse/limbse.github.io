@@ -152,31 +152,47 @@ const pt = {
   },
   equipe: {
     eyebrow: "Equipe",
-    headline: "Quem constroi da NeurovIvA.",
+    headline: "Quem constrói a NeurovIvA.",
     members: [
       {
         name: "Thabata Ganga",
         role: "CEO",
-        bio: "Engenheira biomédica, pesquisadora e responsável pela estratégia, produto e integração tecnológica da solução.",
+        bio: "Engenheira biomédica, pesquisadora e programadora. Lidera a estratégia, o produto e a integração tecnológica da solução.",
         photo: "/assets/images/equipe/thabata.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/thabataganga/",
+          lattes: "http://lattes.cnpq.br/5354513193849491",
+        },
       },
       {
         name: "Eduardo Rorato",
         role: "CTO",
-        bio: "Designer industrial e pesquisador, responsável pelo desenvolvimento de produto, modelagem, design da órtese e manufatura digital.",
+        bio: "Designer industrial e pesquisador. Lidera o desenvolvimento de produto, a modelagem, o design da órtese e a manufatura digital.",
         photo: "/assets/images/equipe/edu.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/edkrorato/",
+          lattes: "http://lattes.cnpq.br/6139426035502341",
+        },
       },
       {
         name: "Beatriz Basso",
         role: "Fisioterapia",
-        bio: "Fisioterapeuta e mestranda em inovação tecnológica, responsável pelos requisitos clínicos, parâmetros terapêuticos e validação funcional",
+        bio: "Fisioterapeuta e mestranda em inovação tecnológica. Conduz os requisitos clínicos, os parâmetros terapêuticos e a validação funcional.",
         photo: "/assets/images/equipe/beatriz.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/beatrizfbasso/",
+          lattes: "http://lattes.cnpq.br/6492131363761624",
+        },
       },
       {
         name: "Dra. Maria Elizete Kunkel",
         role: "Head de Pesquisa Científica",
-        bio: "Professora da Unifesp, pesquisadora em biomecânica e tecnologia assistiva, responsável pela supervisão científica e articulação institucional.",
+        bio: "Professora da Unifesp e pesquisadora em biomecânica e tecnologia assistiva. Lidera a supervisão científica e a articulação institucional.",
         photo: "/assets/images/equipe/elizete.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/elizetekunkel-b930ba86/",
+          lattes: "http://lattes.cnpq.br/8083413188703004",
+        },
       },
     ],
     councilTitle: "Conselho científico",
@@ -364,31 +380,47 @@ const en: Dictionary = {
   },
   equipe: {
     eyebrow: "Team",
-    headline: "The team behind NeurovIvA.",
+    headline: "The team building NeurovIvA.",
     members: [
       {
         name: "Thabata Ganga",
         role: "CEO",
-        bio: "Biomedical engineer and researcher, responsible for strategy, product and technological integration of solution.",
+        bio: "Biomedical engineer, researcher and programmer. Leads strategy, product and technological integration of the solution.",
         photo: "/assets/images/equipe/thabata.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/thabataganga/",
+          lattes: "http://lattes.cnpq.br/5354513193849491",
+        },
       },
       {
         name: "Eduardo Rorato",
         role: "CTO",
-        bio: "Industrial designer and researcher, responsible for product development, modeling, orthosis design and digital manufacturing.",
+        bio: "Industrial designer and researcher. Leads product development, modeling, orthosis design and digital manufacturing.",
         photo: "/assets/images/equipe/edu.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/edkrorato/",
+          lattes: "http://lattes.cnpq.br/6139426035502341",
+        },
       },
       {
         name: "Beatriz Basso",
         role: "Physical Therapy",
-        bio: "Physiotherapist and MSc candidate in technological innovation, responsible for clinical requirements, therapeutic parameters and functional validation.",
+        bio: "Physiotherapist and MSc candidate in technological innovation. Guides clinical requirements, therapeutic parameters and functional validation.",
         photo: "/assets/images/equipe/beatriz.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/beatrizfbasso/",
+          lattes: "http://lattes.cnpq.br/6492131363761624",
+        },
       },
       {
         name: "Dr. Maria Elizete Kunkel",
         role: "Head of Scientific Research",
-        bio: "Professor at Unifesp, researcher in biomechanics and assistive technology, responsible for scientific supervision and institutional coordination.",
+        bio: "Professor at Unifesp and researcher in biomechanics and assistive technology. Leads scientific supervision and institutional coordination.",
         photo: "/assets/images/equipe/elizete.png",
+        socials: {
+          linkedin: "https://www.linkedin.com/in/elizetekunkel-b930ba86/",
+          lattes: "http://lattes.cnpq.br/8083413188703004",
+        },
       },
     ],
     councilTitle: "Scientific council",
