@@ -34,7 +34,7 @@ export function Team({ dict }: Props) {
               transition={{ duration: 0.55, delay: index * 0.1 }}
               className="card-light card-pad flex flex-col"
             >
-              <div className="relative h-16 w-16 overflow-hidden rounded-full border border-teal/20 bg-teal-bg">
+              <div className="relative h-[100px] w-[100px] self-center overflow-hidden rounded-full border border-teal/20 bg-teal-bg sm:self-start">
                 {member.photo ? (
                   <img
                     src={member.photo}
