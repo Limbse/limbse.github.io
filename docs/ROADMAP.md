@@ -205,7 +205,7 @@ Direção principal:
 
 ### Etapa 4 - GLB e Fluxo Digital
 
-**Status:** pendente.
+**Status:** concluída.
 
 **Objetivo:** integrar o GLB à narrativa de tecnologia e personalização.
 
@@ -219,13 +219,15 @@ Direção principal:
 
 **Checklist:**
 
-- [ ] Decidir se o GLB permanece em Impacto ou migra para seção própria.
-- [ ] Adicionar título e subtítulo do fluxo digital.
-- [ ] Adicionar legenda do modelo 3D.
-- [ ] Avaliar microtextos próximos ao GLB.
-- [ ] Garantir que o GLB não compita com o vídeo do hero.
-- [ ] Manter estética wireframe teal.
-- [ ] Não reintroduzir radar.
+- [x] Decidir se o GLB permanece em Impacto ou migra para seção própria.
+- [x] Adicionar título e subtítulo do fluxo digital.
+- [x] Adicionar legenda do modelo 3D.
+- [x] Avaliar microtextos próximos ao GLB.
+- [x] Garantir que o GLB não compita com o vídeo do hero.
+- [x] Manter estética wireframe teal.
+- [x] Não reintroduzir radar.
+
+**Decisão tomada:** GLB migrou para novo componente `components/sections/Technology.tsx`, posicionado entre Neuroviva e Validation. Impact.tsx passou a ser full-width sem canvas. Chave `technology` adicionada em PT e EN no dictionaries.ts.
 
 **Riscos:**
 

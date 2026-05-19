@@ -97,6 +97,21 @@ const pt = {
       "Ministério da Saúde",
     ],
   },
+  technology: {
+    eyebrow: "Fluxo digital",
+    headline: "Do escaneamento à órtese personalizada",
+    subheadline:
+      "A NeurovIvA conecta dados anatômicos, prescrição digital, design personalizado e impressão 3D em uma jornada integrada de reabilitação.",
+    modelCaption: "Modelo tridimensional interativo de órtese personalizada.",
+    steps: [
+      "Prescrição digital",
+      "Escaneamento 3D",
+      "Modelo anatômico",
+      "Design personalizado",
+      "Impressão 3D",
+      "Acompanhamento remoto",
+    ],
+  },
   impacto: {
     eyebrow: "Impacto humano",
     headline:
@@ -257,6 +272,21 @@ const en: Dictionary = {
       "Mão3D",
       "SUS Digital",
       "Brazilian Ministry of Health",
+    ],
+  },
+  technology: {
+    eyebrow: "Digital flow",
+    headline: "From scanning to personalized orthosis",
+    subheadline:
+      "NeurovIvA connects anatomical data, digital prescription, custom design and 3D printing in an integrated rehabilitation journey.",
+    modelCaption: "Interactive 3D model of personalized orthosis.",
+    steps: [
+      "Digital prescription",
+      "3D scanning",
+      "Anatomical model",
+      "Custom design",
+      "3D printing",
+      "Remote follow-up",
     ],
   },
   impacto: {
